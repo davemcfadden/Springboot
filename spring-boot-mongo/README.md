@@ -45,8 +45,7 @@ and its Java equivalent.
     db.sampleset.update({"_id":"01011"},{"$set":{"city":"london"}})
     db.sampleset.update({"city":"HADLEY"},{"$set":{"city":"london"}},{"multi":true})
     db.sampleset.update({"city":"HADLEY"},{"$set":{"city":"london"}},{"multi":true,"upsert":true})
-    ```
-
+```
 
 -Inserts
 ```
@@ -58,4 +57,3 @@ and its Java equivalent.
     db.sampleset.remove({"_id":"11123"})
     db.sampleset.remove()
 ```
-     
