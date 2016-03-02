@@ -8,20 +8,20 @@ and its Java equivalent.
 	- Create folder /data/db
 	- Put Mongo bin directory onto your PATH variable.
 	
--Import sample dataset, found under /src/main/resources/
+- Import sample dataset, found under /src/main/resources/
 	- This can be done by opening  cmd runnin
 
--Import json
+- Import json
     - mongoimport --db sample --collection sampleset sample.json
 
 # Mongo Shell Commands to be Included with Java equivalent
--Find (Select)
-    -db.sampleset.find()
-    -db.sampleset.find({"_id":"01011"})
-    -db.sampleset.find({"_id":{"$gt":"1000"})
-    -db.sampleset.find({"_id":{"$in":["01035","01033"}) 
-    -db.sampleset.find({"_id":"01035","city":"HADLEY"})
-    -db.sampleset.find({"_id":"01011"},{"_id":false},"city":true)
+- Find (Select)
+    - db.sampleset.find()
+    - db.sampleset.find({"_id":"01011"})
+    - db.sampleset.find({"_id":{"$gt":"1000"})
+    - db.sampleset.find({"_id":{"$in":["01035","01033"}) 
+    - db.sampleset.find({"_id":"01035","city":"HADLEY"})
+    - db.sampleset.find({"_id":"01011"},{"_id":false},"city":true)
 
 
 -FindOne (Select first)
