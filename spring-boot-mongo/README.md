@@ -11,11 +11,11 @@ and its Java equivalent.
 -Import sample dataset, found under /src/main/resources/
 	- This can be done by opening  cmd runnin
 
-Import json
+-Import json
     - mongoimport --db sample --collection sampleset sample.json
 
 # Mongo Shell Commands to be Included with Java equivalent
-Find (Select)
+-Find (Select)
     -db.sampleset.find()
     -db.sampleset.find({"_id":"01011"})
     -db.sampleset.find({"_id":{"$gt":"1000"})
@@ -24,23 +24,23 @@ Find (Select)
     -db.sampleset.find({"_id":"01011"},{"_id":false},"city":true)
 
 
-FindOne (Select first)
+-FindOne (Select first)
     -db.sampleset.findOne()
     -db.sampleset.findOne({"_id":"01011"})
 
-Update (overwrite)
+-Update (overwrite)
     -db.sampleset.update({"_id":"01011"},{"city":"london"})
 
-Updates
+-Updates
     -db.sampleset.update({"_id":"01011"},{"$set":{"city":"london"}})
     -db.sampleset.update({"city":"HADLEY"},{"$set":{"city":"london"}},{"multi":true})
     -db.sampleset.update({"city":"HADLEY"},{"$set":{"city":"london"}},{"multi":true,"upsert":true})
 
 
-Inserts
+-Inserts
     -db.sampleset.insert({"_id":"11123","city":"belfast"})
     
-Delete
+-Delete
     -db.sampleset.remove({"_id":"11123"})
     -db.sampleset.remove()
      
