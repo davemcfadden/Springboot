@@ -1,0 +1,33 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:util="http://www.springframework.org/schema/util"
+     xmlns:camel="http://camel.apache.org/schema/spring"
+    xsi:schemaLocation="http://www.springframework.org/schema/context
+          http://www.springframework.org/schema/context/spring-context-3.0.xsd
+          http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+          http://www.springframework.org/schema/util 
+          http://www.springframework.org/schema/util/spring-util-3.0.xsd
+          http://camel.apache.org/schema/spring http://camel.apache.org/schema/spring/camel-spring.xsd">
+          
+          
+          <!--PROPERTY LOADER if you have some properties you want to load from application.properties-->
+<!--  		<context:property-placeholder  location="classpath:/config/application.properties" /> --> 		
+
+
+ 		<!--BEANS  -->
+ 		<bean id="camelConsumer" class="com.camel.boot.consumer.CamelConsumer"/>
+ 		
+ 		  		<!-- CAMEL CONFIG -->
+	 	<camelContext id="camel" xmlns="http://camel.apache.org/schema/spring">
+		    <route>
+		         	<!-- poll every 10 seconds -->
+       			 <from uri="file:src/main/resources/csv" />
+       			 <camel:unmarshal ref="bindyDataformat" >
+					<camel:bindy type="Csv"  classType="com.camel.boot.object.SimpleObject"  />
+				</camel:unmarshal>
+		        <camel:process ref="camelConsumer" />
+		    </route>
+		</camelContext>
+</beans>
