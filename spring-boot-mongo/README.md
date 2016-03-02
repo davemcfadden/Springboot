@@ -33,13 +33,13 @@ and its Java equivalent.
     db.sampleset.findOne({"_id":"01011"})
 ```
 
--Update (overwrite)
+- Update (overwrite)
 
 ```
    db.sampleset.update({"_id":"01011"},{"city":"london"})
 ```
 
--Updates
+- Updates
 
 ```
     db.sampleset.update({"_id":"01011"},{"$set":{"city":"london"}})
@@ -47,12 +47,12 @@ and its Java equivalent.
     db.sampleset.update({"city":"HADLEY"},{"$set":{"city":"london"}},{"multi":true,"upsert":true})
 ```
 
--Inserts
+- Inserts
 ```
     db.sampleset.insert({"_id":"11123","city":"belfast"})
 ```
     
--Delete
+- Delete
 ```
     db.sampleset.remove({"_id":"11123"})
     db.sampleset.remove()
