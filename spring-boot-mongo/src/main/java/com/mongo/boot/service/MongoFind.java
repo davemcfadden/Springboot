@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.mongo.boot.config.MongoConfig;
-import com.mongodb.MongoClient;
+import com.mongodb.client.DistinctIterable;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
@@ -31,5 +31,11 @@ public class MongoFind {
 		return coll.find(filter);
 	}
 	
+	public DistinctIterable<String> findDistinct(String key){
+	    MongoDatabase db = config.getMongoDb();
+	    MongoCollection<Document> coll = db.getCollection("sampleset");
+	    DistinctIterable<String> distinctKeys = coll.distinct(key, String.class);
+	    return distinctKeys;
+    }
 
 }

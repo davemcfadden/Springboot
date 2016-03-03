@@ -13,7 +13,7 @@ public class MongoConfig {
 	
 	@Autowired
     public MongoConfig(MongoClient mongoClient) {
-        this.mongoDb = mongoClient.getDatabase("sampleset");
+        this.mongoDb = mongoClient.getDatabase("sample");
     }
 
 	public MongoDatabase getMongoDb() {
