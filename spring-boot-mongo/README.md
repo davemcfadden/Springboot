@@ -26,6 +26,12 @@ and their Java equivalent.
      db.sampleset.find({"_id":"01011"},{"_id":false},"city":true)
 ```
 
+- Find (Distinct) - Returns an array of all of the distinct city keys
+
+```
+     db.sampleset.distinct("city")
+```
+
 - FindOne (Select first)
 
 ```
