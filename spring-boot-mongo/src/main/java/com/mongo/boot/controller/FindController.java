@@ -42,5 +42,14 @@ public class FindController {
 			return list.toString();
 	    }
 	    
+	    @RequestMapping(value = "/distinct/{key}", method = RequestMethod.GET)
+	    public String findDistinctByKey(@PathVariable  String key) {
+	        List<String> list = new ArrayList<String>();
+	        for(String res : mongoFind.findDistinct(key)){
+	          list.add(res);
+	        }
+	        return list.toString();
+	    }
+	    
 	    
 }
