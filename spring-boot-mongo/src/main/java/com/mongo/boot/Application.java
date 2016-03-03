@@ -11,7 +11,6 @@ import org.springframework.context.annotation.ImportResource;
  *
  */
 @SpringBootApplication
-//@ImportResource({"classpath:/config/applicationContext.xml"})
 public class Application {
 		final static Logger LOGGER = Logger.getLogger(Application.class);
 		

@@ -1,19 +1,22 @@
 package com.mongo.boot.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoDatabase;
 
-@Service("mongoConfig")
+@Component("mongoConfig")
 public class MongoConfig {
 	
 	MongoDatabase mongoDb;
 	
+	
+	
 	@Autowired
-    public MongoConfig(MongoClient mongoClient) {
-        this.mongoDb = mongoClient.getDatabase("sample");
+    public MongoConfig(MongoClient mongoClient, @Value("${spring.data.mongodb.database}") String databaseName) {
+        this.mongoDb = mongoClient.getDatabase(databaseName);
     }
 
 	public MongoDatabase getMongoDb() {
@@ -23,8 +26,5 @@ public class MongoConfig {
 	public void setMongoDb(MongoDatabase mongoDb) {
 		this.mongoDb = mongoDb;
 	}
-	
-	
-	
 
 }
