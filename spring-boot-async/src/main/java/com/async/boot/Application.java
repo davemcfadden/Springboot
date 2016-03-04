@@ -10,7 +10,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
  *
  */
 @SpringBootApplication
-@EnableAsync(proxyTargetClass=true)
+@EnableAsync
 public class Application {
 		public static void main(String[] args) {
 			SpringApplication.run(Application.class, args);
