@@ -63,3 +63,7 @@ and their Java equivalent. All Java commands currently implemented have yet to b
     db.sampleset.remove({"_id":"11123"})
     db.sampleset.remove()
 ```
+
+# Future work
+
+- Implement number of commands from the aggregation framework.
