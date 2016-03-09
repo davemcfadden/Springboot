@@ -13,6 +13,11 @@ import com.mongodb.client.DistinctIterable;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+/**
+ * 
+ * @author Dave McFadden
+ *
+ */
 
 @Component("mongoFind")
 public class MongoFind {

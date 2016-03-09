@@ -20,15 +20,14 @@ public class DeleteController {
 		@Autowired
 		MongoDelete mongoDelete;
 	
-	    @RequestMapping("/all")
-	    public String findAll() {
-	       return "s";
+	    @RequestMapping(value = "/id/{id}", method = RequestMethod.DELETE)
+	    public void deleteByPrimaryKey(@PathVariable  String id) {
+	       mongoDelete.delete(id);
 	    }
 	    
-	    @RequestMapping(value = "/id/{id}", method = RequestMethod.GET)
-	    public String findByPrimaryKey(@PathVariable  String id) {
-	       return "s";
+	    @RequestMapping(value = "/", method = RequestMethod.DELETE)
+	    public void deleteAll() {
+	       mongoDelete.deleteAll();
 	    }
-	    
-	    
 }
+	    

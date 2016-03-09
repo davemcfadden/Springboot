@@ -9,7 +9,11 @@ import com.mongo.boot.config.MongoConfig;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
-
+/**
+ * 
+ * @author Dave McFadden
+ *
+ */
 @Component("mongoInsert")
 public class MongoInsert {
 	
