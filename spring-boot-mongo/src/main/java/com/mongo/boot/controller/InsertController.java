@@ -20,8 +20,12 @@ public class InsertController {
 		@Autowired
 		MongoInsert mongoInsert;
 		
-		
-		 @RequestMapping(value = "/insert", method = RequestMethod.POST)
+		/**http://localhost:8080/insert
+		 * 
+		 * @param {_id:123, name:"test", city:"belfast"}
+		 * @return null
+		 */
+		 @RequestMapping(value = "/", method = RequestMethod.POST)
 		    public long insert(@RequestBody String json) {
 			 return mongoInsert.persistMessage(json);
 		    }

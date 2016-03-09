@@ -34,30 +34,30 @@ public class MongoUpdate {
 	public String updateOne(String id) {
 		MongoDatabase db =config.getMongoDb();
 		MongoCollection<Document> coll = db.getCollection(collectionName);
-		coll.updateOne(new Document("_id",id),new Document("city","london").append("age", "old"));
+		coll.replaceOne(new Document("_id",id),new Document("city","MANCHESTER").append("age", "old"));
 
-		return coll.find(new Document("_id", id)).toString();
+		return coll.find(new Document("_id", id)).first().toString();
 	}
 
 	public String updateSingleElement(String id, String city) {
 		MongoDatabase db =config.getMongoDb();
 		MongoCollection<Document> coll = db.getCollection(collectionName);
 		coll.updateOne(new Document("_id",id),new Document("$set", new Document("city","Belfast")));
-		return coll.find(new Document("_id", id)).toString();
+		return coll.find(new Document("_id", id)).first().toString();
 	}
 
 	public String updateMultiple(String city) {
 		MongoDatabase db =config.getMongoDb();
 		MongoCollection<Document> coll = db.getCollection(collectionName);
-		coll.updateMany(new Document("city",city),new Document("$set", new Document("city","Belfast")));
-		return coll.find(new Document("city", city)).toString();
+		coll.updateMany(new Document("city",city),new Document("$set", new Document("city","BELFAST")));
+		return coll.find(new Document("city", "BELFAST")).first().toString();
 	}
 	
 	public String upsert(String id, String city) {
 		MongoDatabase db =config.getMongoDb();
 		MongoCollection<Document> coll = db.getCollection(collectionName);
 		coll.updateOne(new Document("_id",id),new Document("$set", new Document("city","Manchester")),new UpdateOptions().upsert(true));
-		return coll.find(new Document("city", city)).toString();
+		return coll.find(new Document("_id", id)).first().toString();
 	}
 
 

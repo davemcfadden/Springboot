@@ -46,12 +46,12 @@ public class MongoFind {
 	public FindIterable<Document> findByIdGreaterThan(String id){
 		MongoDatabase db = config.getMongoDb();
 		MongoCollection<Document> coll = db.getCollection(collectionName);
-		Bson filter = new Document("_id", new Document("$gt",1000));
+		Bson filter = new Document("_id", new Document("$gt",id));
 		return coll.find(filter);
 	}
 	
     //db.sampleset.find({"_id":{"$in":["01035","01033"})
-	public FindIterable<Document> findIdIn(List<Integer> ids){
+	public FindIterable<Document> findIdIn(List<String> ids){
 		MongoDatabase db = config.getMongoDb();
 		MongoCollection<Document> coll = db.getCollection(collectionName);
 		Bson filter = new Document("_id", new Document("$in",ids));
@@ -63,8 +63,8 @@ public class MongoFind {
 	public FindIterable<Document> findByIdAndCity(String id, String city){
 		MongoDatabase db = config.getMongoDb();
 		MongoCollection<Document> coll = db.getCollection(collectionName);
-		Bson filter = new Document("_id", 01033)
-						.append("city", "HADLEY");
+		Bson filter = new Document("_id", id)
+						.append("city", city);
 		return coll.find(filter);
 	}
 	
@@ -73,7 +73,7 @@ public class MongoFind {
 		MongoDatabase db = config.getMongoDb();
 		MongoCollection<Document> coll = db.getCollection(collectionName);
 		Bson projection = new Document("_id",0).append("city", 1);
-		Bson filter = new Document("_id", 01033);
+		Bson filter = new Document("_id", id);
 		return coll.find(filter).projection(projection);
 	}
 	
@@ -89,13 +89,13 @@ public class MongoFind {
 	    MongoDatabase db = config.getMongoDb();
 	    MongoCollection<Document> coll = db.getCollection(collectionName);
 	    Bson filter = new Document("_id",id);
-	    return coll.find(filter).limit(1).toString();
+	    return coll.find(filter).first().toString();
     }
 	
 	public String findOne(){
 	    MongoDatabase db = config.getMongoDb();
 	    MongoCollection<Document> coll = db.getCollection(collectionName);
-	    return coll.find().limit(1).toString();
+	    return coll.find().first().toString();
     }
 	
 	public String getCollectionName() {

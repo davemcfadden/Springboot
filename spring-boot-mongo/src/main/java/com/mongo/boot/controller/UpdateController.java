@@ -21,23 +21,26 @@ public class UpdateController {
 		MongoUpdate mongoUpdate;
 	
 	
-		
-	    @RequestMapping(value ="/id/{id}/city/{city}", method = RequestMethod.PUT)
-	    public String updateOne(@PathVariable  String id,@PathVariable  String city) {
+		//http://localhost:8080/update/updateone/id/01011
+	    @RequestMapping(value ="/updateone/id/{id}", method = RequestMethod.PUT)
+	    public String updateOne(@PathVariable  String id) {
 	       return mongoUpdate.updateOne(id);
 	    }
 	    
-	    @RequestMapping(value = "/id/{id}/city/{city}", method = RequestMethod.PUT)
+		//http://localhost:8080/update/updateone/id/01011/city/MANCHESTER
+	    @RequestMapping(value = "/single/id/{id}/city/{city}", method = RequestMethod.PUT)
 	    public String updateSingleElement(@PathVariable  String id,@PathVariable  String city) {
 	    	return mongoUpdate.updateSingleElement(id,city);
 	    }
 	    
-	    @RequestMapping(value = "/city/{city}", method = RequestMethod.PUT)
+		//http://localhost:8080/update/updatemultiple/city/CHESTER
+	    @RequestMapping(value = "/updatemultiple/city/{city}", method = RequestMethod.PUT)
 	    public String updateMultiple(@PathVariable  String city) {
 	    	return mongoUpdate.updateMultiple(city);
 	    }
 	    
-	    @RequestMapping(value = "/id/{id}/city/{city}", method = RequestMethod.PUT)
+		//http://localhost:8080/update/upsert/id/01011/city/BELFAST
+	    @RequestMapping(value = "/upsert/id/{id}/city/{city}", method = RequestMethod.PUT)
 	    public String upsert(@PathVariable  String id, @PathVariable String city) {
 	    	return mongoUpdate.upsert(id,city);
 	    }
