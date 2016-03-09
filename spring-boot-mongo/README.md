@@ -1,7 +1,7 @@
 # Spring-Boot-Mongo
 Spring-boot-mongo application.
-When complete, the app will give a complete reference page for a number of mongo shell commands
-and their Java equivalent.
+When complete, the app will give a complete reference page for a number of Mongo shell commands
+and their Java equivalent. All Java commands currently implemented have yet to be fully tested.
 
 # Pre-requisites
 - MongoDb3.0 or later installed

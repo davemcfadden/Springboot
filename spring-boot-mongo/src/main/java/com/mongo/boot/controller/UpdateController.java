@@ -20,14 +20,26 @@ public class UpdateController {
 		@Autowired
 		MongoUpdate mongoUpdate;
 	
-	    @RequestMapping("/all")
-	    public String findAll() {
-	       return "s";
+	
+		
+	    @RequestMapping(value ="/id/{id}/city/{city}", method = RequestMethod.PUT)
+	    public String updateOne(@PathVariable  String id,@PathVariable  String city) {
+	       return mongoUpdate.updateOne(id);
 	    }
 	    
-	    @RequestMapping(value = "/id/{id}", method = RequestMethod.GET)
-	    public String findByPrimaryKey(@PathVariable  String id) {
-	       return "s";
+	    @RequestMapping(value = "/id/{id}/city/{city}", method = RequestMethod.PUT)
+	    public String updateSingleElement(@PathVariable  String id,@PathVariable  String city) {
+	    	return mongoUpdate.updateSingleElement(id,city);
+	    }
+	    
+	    @RequestMapping(value = "/city/{city}", method = RequestMethod.PUT)
+	    public String updateMultiple(@PathVariable  String city) {
+	    	return mongoUpdate.updateMultiple(city);
+	    }
+	    
+	    @RequestMapping(value = "/id/{id}/city/{city}", method = RequestMethod.PUT)
+	    public String upsert(@PathVariable  String id, @PathVariable String city) {
+	    	return mongoUpdate.upsert(id,city);
 	    }
 	    
 	    
