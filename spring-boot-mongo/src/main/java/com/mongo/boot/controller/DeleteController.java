@@ -20,11 +20,14 @@ public class DeleteController {
 		@Autowired
 		MongoDelete mongoDelete;
 	
+		
+		//http://localhost:8080/delete/id/0101199
 	    @RequestMapping(value = "/id/{id}", method = RequestMethod.DELETE)
 	    public void deleteByPrimaryKey(@PathVariable  String id) {
 	       mongoDelete.delete(id);
 	    }
 	    
+	    //http://localhost:8080/delete/
 	    @RequestMapping(value = "/", method = RequestMethod.DELETE)
 	    public void deleteAll() {
 	       mongoDelete.deleteAll();
