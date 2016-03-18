@@ -1,0 +1,14 @@
+FROM ubuntu
+MAINTAINER Dave McFadden "david.mcfadden@outlook.com"
+
+# Install java
+RUN add-apt-repository -y ppa:openjdk-r/ppa && apt-get update && \
+    apt-get install -y openjdk-8-jdk
+
+ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-openjdk-amd64
+
+WORKDIR /webapp
+
+CMD ["java", "-version"]
+
+EXPOSE 8080
