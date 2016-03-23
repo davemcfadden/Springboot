@@ -3,4 +3,4 @@ Simple Spring-boot-camel program. Using camel to read a CSV file, each line of t
 turn will be sent to the CamelConsumer and printed to the console.
 
 # Future work
-- Add another camel routes to read from Active MQ
+- Add another camel route to read from Active MQ
