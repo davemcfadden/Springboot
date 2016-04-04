@@ -66,4 +66,4 @@ and their Java equivalent. All Java commands currently implemented have yet to b
 
 # Future work
 
-- Implement number of commands from the aggregation framework.
+- Implement a number of commands using the aggregation framework.
