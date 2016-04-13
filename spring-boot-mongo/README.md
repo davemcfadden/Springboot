@@ -11,7 +11,7 @@ and their Java equivalent. All Java commands currently implemented have yet to b
 - Import sample dataset, found under /src/main/resources/
 	- This can be done by opening  command.exe and running
 	```
-	mongoimport --db sample --collection sampleset sample.json
+	mongoimport --db sample --collection sampleset sample.json --batchSize 1
 	```
 
 # Mongo Shell Commands to be included with Java equivalent
