@@ -3,11 +3,8 @@
   <groupId>spring-boot-mongo</groupId>
   <artifactId>spring-boot-mongo</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  
-  <properties>
-		<camel.version>2.16.2</camel.version>
-	</properties>
-  
+  <packaging>jar</packaging>
+
 	<parent>
 	    <groupId>org.springframework.boot</groupId>
 	    <artifactId>spring-boot-starter-parent</artifactId>
@@ -43,6 +40,16 @@
 	   
 				
 	</dependencies>
+	
+	<build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+            
   
   
 </project>
