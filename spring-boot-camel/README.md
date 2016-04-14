@@ -1,6 +1,5 @@
 # Spring-Boot-Camel
-Simple Spring-boot-camel program. Using camel to read a CSV file, each line of this file will be converted to an Object which in 
-turn will be sent to the CamelConsumer and printed to the console.
+Simple camel route. Using camel to read and a CSV, each line in turn is then converted to an Object before being printed to the console.
 
 # Future work
 - Add another camel route to read from Active MQ
