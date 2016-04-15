@@ -7,7 +7,7 @@ import org.apache.camel.Processor;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Component;
 
-import com.camel.boot.object.SimpleObject;
+import com.camel.boot.domain.SimpleObject;
 /**
  * 
  * @author Dave McFadden
